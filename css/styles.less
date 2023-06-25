@@ -16,14 +16,46 @@ body {
   font-weight: @fw-regular;
 }
 
+.app__map {
+  background: @black;
+  margin: 0;
+  padding: 0;
+
+  .map {
+    width: 100%;
+    height: 100%;
+    
+  }
+}
+
+.btn-normal {
+  background: 
+    linear-gradient(90deg, @black 204px, @gold 204px);
+
+  &:hover {
+    background: 
+      linear-gradient(90deg, @gold 204px, @black 204px);
+  }
+}
+
+.btn-reverse {
+  background: 
+    linear-gradient(90deg, @gold 56px, @black 56px);
+  margin-left: 212px;
+  position: absolute;
+
+  &:hover {
+    background: 
+      linear-gradient(90deg, @black 56px, @gold 56px);
+  }
+}
+
 .btn {
   align-items: center;
   display: flex;
   justify-content: space-around;
   color: @white;
   text-decoration: none;
-  background: 
-    linear-gradient(90deg, @black 204px, @gold 56px);
   border: 0;
   height: 72px;
   width: 260px;
@@ -34,9 +66,9 @@ body {
   text-transform: uppercase;
   text-align: start;
 
-  &:hover {
-    background: 
-      linear-gradient(90deg, @gold 204px, @black 56px);
+
+  @media (max-width: 1024px) {
+    font-weight: @fw-bold;
   }
 }
 
@@ -44,9 +76,23 @@ body {
 
   .app__principal {
     display: flex;
-
     align-items: baseline;
     justify-content: space-between;
+    width: 100%;
+
+    
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: end;
+      gap: 48px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 32px;
+    }
+    
     .black-bg {
       background: @black;
       left: 0;
@@ -55,6 +101,10 @@ body {
       position: absolute;
       top: 0;
       z-index: -1;
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
 
     .img-bg {
@@ -66,6 +116,19 @@ body {
       height: 800px;
       width: 450px;
       z-index: -1;
+      
+      @media (max-width: 1024px) {
+        left: 0;
+      }
+
+      @media (max-width: 768px) {
+        background-image: url('../assets/mobile/image-hero@2x.jpg');
+        background-position: center top;
+        background-size: cover;
+        position: static;
+        height: 500px;
+        width: 100%;
+      }
     }
 
     .app__principal-title {
@@ -78,6 +141,13 @@ body {
       mix-blend-mode: difference;
       text-transform: uppercase;
       width: 514px;
+
+      @media (max-width: 1024px) {
+        color: @black;
+        font-size: @fs-heading-l;
+        line-height: calc(@line-heading-l - 5px);
+        mix-blend-mode: normal;
+      }
     }
 
     .app__principal-info {
@@ -86,6 +156,11 @@ body {
       gap: 64px;
       margin-right: 364px;
       width: 353px;
+
+      @media (max-width: 1450px) {
+        margin-right: 124px;
+        
+      }
       
       .app__principal-description {
         color: @dark;
@@ -93,6 +168,11 @@ body {
         font-size: @fs-body-m;
         font-weight: @fw-regular;
         line-height: @line-body-m;
+        
+        @media (max-width: 1024px) {
+          font-size: @fs-body-s;
+          line-height: @line-body-s;
+        }
       }
     }
   }
@@ -111,6 +191,18 @@ body {
       justify-content: center;
       gap: 30px;
 
+      @media(max-width: 1450px) {
+        grid-template-columns: repeat(3, 295px);
+        gap: 15px;
+      }
+
+      @media(max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        height: 1140px;
+      }
+
+
       .grid-item-one {
         grid-column: 1;
 
@@ -123,7 +215,12 @@ body {
           font-size: @fs-heading-m;
           font-weight: @fw-extra-bold;
           text-transform: uppercase;
-          line-height: calc(@line-heading-l - 10px)
+          line-height: calc(@line-heading-l - 10px);
+
+          @media (max-width: 1024px) {
+            font-size: calc(@fs-heading-m - 10px);
+            line-height: calc(@line-heading-m - 5px);
+          }
 
         }
         
@@ -133,7 +230,13 @@ body {
           font-family: @font-family-outfit;
           font-weight: @fw-regular;
           line-height: @line-body-m;
+
+          @media(max-width: 1024px) {
+            font-size: @fs-body-s;
+            line-height: @line-body-s;
+          }
         }
+
       }
 
       .grid-item-two {
@@ -142,6 +245,17 @@ body {
         background-repeat: no-repeat;
         background-position: 100%;
         background-size: 750px;
+
+        @media(max-width: 1450px) {
+          background-size: 550px;
+        }
+
+        @media(max-width: 1024px) {
+          background-size: cover;
+          background-position: center;
+          grid-column: 2;
+        }
+
       }
 
       .grid-item-three {
@@ -150,6 +264,17 @@ body {
         background-image: url("../assets/desktop/image-grid-2.jpg");
         background-repeat: no-repeat;
         background-size: 920px 730px;
+
+        @media(max-width: 1450px) {
+          background-size: cover;
+        }
+
+        @media(max-width: 1024px) {
+          background-size: 100% 100%;
+          background-position: center;
+          grid-column: 1;
+        }
+
       }
       
       .grid-item-four {
@@ -157,6 +282,18 @@ body {
         background-image: url("../assets/desktop/image-grid-3.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+
+        @media(max-width: 1450px) {
+          background-size: cover;
+          background-position: center;
+        }
+
+        @media(max-width: 1024px) {
+          background-size: cover;
+          background-position: center;
+          grid-row: 2;
+          grid-column: 2;
+        }
       }
 
       .grid-item-five {
@@ -177,8 +314,12 @@ body {
           font-size: @fs-heading-m;
           font-weight: @fw-extra-bold;
           text-transform: uppercase;
-          line-height: calc(@line-heading-l - 10px)
+          line-height: calc(@line-heading-l - 10px);
 
+          @media (max-width: 1024px) {
+            font-size: calc(@fs-heading-m - 10px);
+            line-height: calc(@line-heading-m - 5px);
+          }
         }
         
         .description {
@@ -186,6 +327,16 @@ body {
           font-family: @font-family-outfit;
           font-weight: @fw-regular;
           line-height: @line-body-m;
+
+          @media(max-width: 1024px) {
+            font-size: @fs-body-s;
+            line-height: @line-body-s;
+          }
+        }
+
+        @media(max-width: 1024px) {
+          grid-row: 3;
+          grid-column: 2;
         }
       }
     }
@@ -193,12 +344,72 @@ body {
   }
 }
 
-.app__footer {
+.app__ubication {
   background: @black;
+  color: @white;
+  display: flex;
+  justify-content: space-around;
+  height: 548px;
+  padding: 10rem 5rem;
+
+  .app__ubication-title {
+    font-family: @font-family-shoulders;
+    font-size: @fs-heading-m;
+    font-weight: @fw-extra-bold;
+    line-height: @line-heading-l;
+    text-transform: uppercase;
+  }
+
+  .app__ubication-info {
+    color: @white;
+    display: flex;
+    flex-direction: column;
+    font-family: @font-family-outfit;
+    font-size: @fs-body-m;
+    font-weight: @fw-regular;
+    gap: 24px;
+    line-height: @line-body-m;
+    width: 540px;
+
+    .app__ubication-street {
+      color: @gold;
+      font-family: @font-family-shoulders;
+      font-size: @fs-heading-s;
+      font-weight: @fw-extra-bold;
+      line-height: @line-heading-s;
+      text-transform: uppercase;
+    }
+
+    .app__ubication-address {
+      list-style-type: none;
+
+    }
+  }
+}
+
+.app__footer.index {
+  background: @black;
+  color: @white;
+}
+
+.app__footer.location {
+  background: @gold;
+  color: @black;
+}
+
+.app__footer {
   display: flex;
   justify-content: space-between;
-  color: @white;
   padding: 4rem 15rem;
+  gap: 64px;
+
+  @media (max-width: 1450px) {
+    padding: 2rem 7.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 2rem 1rem;
+  }
 
   .app__footer-logo {
     height: 58px;
@@ -217,6 +428,5 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
-
   }
 }

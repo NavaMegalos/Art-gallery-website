@@ -16,33 +16,59 @@
     <title>Frontend Mentor | Art gallery website</title>
   </head>
   <body>
-    <button>Back to Home</button>
+    <main>
+      <section class="app__map">
+        <a class="btn btn-reverse" href="./index.html">
+          <img src="./assets/icon-arrow-left.svg" alt="icon arrow right">
+          <span>Back to home</span>
+        </a>
 
-    <h1>Our location</h1>
+        <figure>
+          <img class="map" src="./assets/desktop/image-map@2x.png" alt="map img">
+        </figure>
 
-    <h2>99 King Street</h2>
-    <ul>
-      <li>Newport</li>
-      <li>RI 02840</li>
+      </section>
+      <section class="app__ubication">
+        <h1 class="app__ubication-title">
+          Our
+          <br>
+          location
+        </h1>
 
-      <li>United States of America</li>
-    </ul>
-
-    <p>
-      Our newly opened gallery is located near the Edward King House on 99 King
-      Street, the Modern Art Gallery is free to all visitors and open seven days
-      a week from 8am to 9pm.
-    </p>
-    <footer>
-      <h3>Modern Art Gallery</h3>
-      <p>
+        <div class="app__ubication-info">
+          <h2 class="app__ubication-street">99 King Street</h2>
+          <ul class="app__ubication-address">
+            <li>Newport</li>
+            <li>RI 02840</li>
+      
+            <li>United States of America</li>
+          </ul>
+          <p class="app__ubication-description">
+            Our newly opened gallery is located near the Edward King House on 99 King
+            Street, the Modern Art Gallery is free to all visitors and open seven days
+            a week from 8am to 9pm.
+          </p>
+        </div>
+      </section>
+  
+  
+    </main>
+    <footer class="app__footer location">
+      <img class="app__footer-logo" src="./assets/logo-dark.svg" alt="app icon light">
+      <p class="app__footer-description">
         The Modern Art Gallery is free to all visitors and open seven days a
         week from 8am to 9pm. Find us at 99 King Street, Newport, USA.
       </p>
-      <ul>
-        <li class="icon-fb"></li>
-        <li class="icon-ig"></li>
-        <li class="icon-twt"></li>
+      <ul class="app__footer-icons">
+        <li class="icon-fb">
+          <img class="icon" src="./assets/icon-facebook.svg" alt="facebook icon">
+        </li>
+        <li class="icon-ig">
+          <img class="icon" src="./assets/icon-instagram.svg" alt="instagram icon">
+        </li>
+        <li class="icon-twt">
+          <img class="icon" src="./assets/icon-twitter.svg" alt="twitter icon">
+        </li>
       </ul>
     </footer>
   </body>
