@@ -22,10 +22,23 @@ body {
   padding: 0;
 
   .map {
+    height: 685px;
+    object-fit: cover;
     width: 100%;
-    height: 100%;
-    
+
+    @media (max-width: 1024px) {
+      content: url("../assets/desktop/image-map@2x.png");
+      height: 600px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      content: url("../assets/mobile/image-map@2x.png");
+      height: 700px;
+      object-fit: cover;
+    }
   }
+
 }
 
 .btn-normal {
@@ -43,6 +56,14 @@ body {
     linear-gradient(90deg, @gold 56px, @black 56px);
   margin-left: 212px;
   position: absolute;
+
+  @media (max-width: 1024px) {
+    margin-left: 39px;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 
   &:hover {
     background: 
@@ -405,12 +426,35 @@ body {
   height: 548px;
   padding: 10rem 5rem;
 
+  @media (max-width: 1024px) {
+    justify-content: center;
+    gap: 68px;
+    padding: 8rem 5rem;
+    height: 380px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
+
   .app__ubication-title {
     font-family: @font-family-shoulders;
     font-size: @fs-heading-m;
     font-weight: @fw-extra-bold;
     line-height: @line-heading-l;
     text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+      font-size: calc(@fs-heading-m - 5px);
+      line-height: calc(@line-heading-l - 10px);
+    }
+
+    @media (max-width: 768px) {
+      font-size: calc(@fs-heading-m - 10px);
+      line-height: calc(@line-heading-m - 5px);
+      
+    }
   }
 
   .app__ubication-info {
@@ -424,6 +468,15 @@ body {
     line-height: @line-body-m;
     width: 540px;
 
+    @media (max-width: 1024px) {
+      font-size: @fs-body-s;
+      line-height: @line-body-s;
+    }
+
+    @media (max-width: 768px) {
+      width: auto;
+    }
+
     .app__ubication-street {
       color: @gold;
       font-family: @font-family-shoulders;
@@ -431,6 +484,11 @@ body {
       font-weight: @fw-extra-bold;
       line-height: @line-heading-s;
       text-transform: uppercase;
+
+      @media (max-width: 1024px) {
+        font-size: calc(@fs-heading-s - 4px);
+        line-height: calc(@line-heading-s - 4px);
+      }
     }
 
     .app__ubication-address {
